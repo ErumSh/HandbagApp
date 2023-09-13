@@ -1,3 +1,7 @@
 /.idea/
 *.iml
 
+/frontend/mvnw.cmd
+/frontend/mvnw
+/frontend/.mvn/
+
