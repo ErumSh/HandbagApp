@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.iav.frontend.controller.BagController">
+   <children>
+      <ImageView fitHeight="184.0" fitWidth="262.0" layoutX="123.0" layoutY="51.0" onMouseClicked="#Icon1Clicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@IMG_9516.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="184.0" fitWidth="175.0" layoutX="327.0" layoutY="51.0" onMouseClicked="#Icon2Clicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@IMG_9516.jpg" />
+         </image>
+      </ImageView>
+      <CheckBox layoutX="141.0" layoutY="308.0" mnemonicParsing="false" text="CheckBox" />
+   </children>
+</AnchorPane>
