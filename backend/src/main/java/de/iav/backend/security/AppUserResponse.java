@@ -1,11 +1,12 @@
 package de.iav.backend.security;
 
+import de.iav.backend.model.AppUserRole;
+
 public record AppUserResponse(
         String id,
 
-        String firstName,
-        String lastName,
+        String userName,
         String email,
-        String role
+        AppUserRole role
 ) {
 }

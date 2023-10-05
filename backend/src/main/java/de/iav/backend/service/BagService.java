@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -17,5 +18,13 @@ public class BagService {
     public List<Bag> getAllBags(){return bagRepository.findAll();}
     public Bag saveBag (Bag bag){
         System.out.println(bagRepository.save(bag));
-        return bagRepository.save(bag);}
+        return bagRepository.save(bag);
+    }
+    public Optional<Bag> getBagbyType (String type){
+        return bagRepository.findByType(type);
+    }
+
+    public Optional<Bag> getBagById (String id){
+        return bagRepository.findById(id);
+    }
 }
