@@ -4,7 +4,7 @@ public record Bag(
 
         String id,
         String type,
-        int price,
+        String price,
         String brand
 ){
 }
