@@ -19,10 +19,14 @@ public class BagController {
     @GetMapping
     public List<Bag> getAllBags()
     {
-        Bag bag1 = new Bag("1","lunchbox","23", "KS");
-        Bag bag2 = new Bag("2","tabby","25", "KS");
+        Bag bag1 = new Bag("1","lunchbox","500", "Coach");
+        Bag bag2 = new Bag("2","MediumTote","250", "KS");
+        Bag bag3 = new Bag("3","LargeTote","450", "MK");
+        Bag bag4 = new Bag("4","LargeTote","450", "KS");
         bagRepository.save(bag1);
         bagRepository.save(bag2);
+        bagRepository.save(bag3);
+        bagRepository.save(bag4);
         return bagService.getAllBags();
 
     }

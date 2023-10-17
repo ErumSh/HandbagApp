@@ -3,13 +3,11 @@ package de.iav.frontend.model;
 
 import java.util.List;
 
-public record User(
-        String id,
+public record UserWithoutIdDto(
         String userName,
+
         String email,
         String password,
-        String role,
         List<Bag>listOfBags
-
 ) {
 }

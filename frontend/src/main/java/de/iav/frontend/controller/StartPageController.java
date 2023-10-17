@@ -1,7 +1,5 @@
 package de.iav.frontend.controller;
 
-import de.iav.frontend.model.User;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

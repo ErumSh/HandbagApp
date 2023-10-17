@@ -8,7 +8,7 @@
       xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.iav.frontend.security.LoginController">
     <children>
         <Label text="Username"/>
-        <TextField fx:id="usernameInput"/>
+        <TextField fx:id="emailInput"/>
         <Label text="Password"/>
         <PasswordField fx:id="passwordInput"/>
         <Label fx:id="errorLabel"/>
