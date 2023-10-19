@@ -4,7 +4,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import de.iav.frontend.model.Bag;
-import de.iav.frontend.model.User;
 
 
 import java.net.URI;
@@ -56,10 +55,10 @@ public class BagService {
             throw new RuntimeException("Failed to map bag", e);
         }
     }
-    public Bag getBagByType(String type) {
+    public Bag getBagById(String id) {
         HttpRequest request = HttpRequest.newBuilder()
                 .GET()
-                .uri(URI.create("http://localhost:8080/api/bags/type/" + type))
+                .uri(URI.create("http://localhost:8080/api/bags/id/" + id))
                 .build();
         return httpClient.sendAsync(request, HttpResponse.BodyHandlers.ofString())
                 .thenApply(HttpResponse::body)

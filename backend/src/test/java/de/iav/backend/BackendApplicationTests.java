@@ -7,6 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 class BackendApplicationTests {
 
 	@Test
+	@SuppressWarnings("squid:S2699")
 	void contextLoads() {
 	}
 

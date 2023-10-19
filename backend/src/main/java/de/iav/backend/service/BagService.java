@@ -16,9 +16,9 @@ public class BagService {
     private final BagRepository bagRepository;
 
     public List<Bag> getAllBags(){return bagRepository.findAll();}
-    public Bag saveBag (Bag bag){
+    public void saveBag (Bag bag){
         System.out.println(bagRepository.save(bag));
-        return bagRepository.save(bag);
+        bagRepository.save(bag);
     }
     public Optional<Bag> getBagbyType (String type){
         return bagRepository.findByType(type);
