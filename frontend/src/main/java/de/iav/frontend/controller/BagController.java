@@ -31,6 +31,9 @@ public class BagController {
     public Label User;
     private final UserService userService = new UserService();
     public String email;
+    public Label Label5;
+    public Label Label4;
+    public Label Label3;
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -51,29 +54,36 @@ public class BagController {
     public void BuyButtonClicked(ActionEvent actionEvent) {
         if (iconClicked == 1)
         {
-
-            User oldUser = userService.getUserByEmail(email);
-            List<Bag> listOfBags = oldUser.listOfBags();
-            Bag newBag = bagService.getBagById("1");
-            listOfBags.add(newBag);
-            List<Bag> listOfBagsUpdated = listOfBags;
-            User newUser = new User(oldUser.id(), oldUser.userName(), oldUser.email(), oldUser.password(),oldUser.role(), listOfBagsUpdated);
-            System.out.println(newUser);
-            userService.updateUser(newUser);
+            BuyBag("1");
         }
         else if (iconClicked == 2)
         {
-            User oldUser = userService.getUserByEmail(email);
-            List<Bag> listOfBags = oldUser.listOfBags();
-            Bag newBag = bagService.getBagById("2");
-            listOfBags.add(newBag);
-            List<Bag> listOfBagsUpdated = listOfBags;
-            User newUser = new User(oldUser.id(), oldUser.userName(), oldUser.email(), oldUser.password(),oldUser.role(), listOfBagsUpdated);
-            System.out.println(newUser);
-            userService.updateUser(newUser);
+            BuyBag("2");
+        }
+        else if (iconClicked == 3)
+        {
+            BuyBag("3");
+        }
+        else if (iconClicked == 4)
+        {
+            BuyBag("4");
+        }
+        else if (iconClicked == 5)
+        {
+            BuyBag("5");
         }
     }
+    public void BuyBag(String bag){
+        User oldUser = userService.getUserByEmail(email);
+        List<Bag> listOfBags = oldUser.listOfBags();
+        Bag newBag = bagService.getBagById(bag);
+        listOfBags.add(newBag);
+        List<Bag> listOfBagsUpdated = listOfBags;
+        User newUser = new User(oldUser.id(), oldUser.userName(), oldUser.email(), oldUser.password(),oldUser.role(), listOfBagsUpdated);
+        System.out.println(newUser);
+        userService.updateUser(newUser);
 
+    }
     public void MyCartPressed(ActionEvent actionEvent) {
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/de/iav/frontend/List.fxml"));
@@ -107,6 +117,15 @@ public class BagController {
             }
 
         });
+        cartListController.email = this.email;
     }
 
+    public void Icon3Clicked(MouseEvent mouseEvent) {iconClicked = 3;
+    }
+
+    public void Icon4Clicked(MouseEvent mouseEvent) {iconClicked = 4;
+    }
+
+    public void Icon5Clicked(MouseEvent mouseEvent) {iconClicked = 5;
+    }
 }

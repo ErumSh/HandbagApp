@@ -1,6 +1,7 @@
 package de.iav.frontend.security;
 
 import de.iav.frontend.controller.BagController;
+import de.iav.frontend.controller.CartListController;
 import de.iav.frontend.model.User;
 import de.iav.frontend.security.AuthService;
 import de.iav.frontend.service.BagService;
@@ -63,14 +64,19 @@ public class LoginController {
                                 e.printStackTrace();
                             }
                             BagController bagController = fxmlLoader.getController();
+
                             Scene scene = new Scene(parent);
                             Stage stage = (Stage) emailInput.getScene().getWindow();
                             stage.setScene(scene);
                             bagController.email= emailInput.getText();
+
                             bagController.User.setText((userService.getUserByEmail(emailInput.getText())).userName());
                             //System.out.println(String.valueOf(bagService.getBagByType("tabby")));
-                            bagController.Label1.setText(String.valueOf(bagService.getBagById("1").price())+ "$");
-                            bagController.Label2.setText(String.valueOf(bagService.getBagById("2").price()) + "$");
+                            bagController.Label1.setText(String.valueOf(bagService.getBagById("1").price())+ "$  ,"+ bagService.getBagById("1").brand());
+                            bagController.Label2.setText(String.valueOf(bagService.getBagById("2").price()) + "$  ,"+ bagService.getBagById("2").brand());
+                            bagController.Label3.setText(String.valueOf(bagService.getBagById("3").price())+ "$  ,"+ bagService.getBagById("3").brand());
+                            bagController.Label4.setText(String.valueOf(bagService.getBagById("4").price()) + "$  ,"+ bagService.getBagById("4").brand());
+                            bagController.Label4.setText(String.valueOf(bagService.getBagById("5").price()) + "$  ,"+ bagService.getBagById("5").brand());
                         }
                     }
                 }
